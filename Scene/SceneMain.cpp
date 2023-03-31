@@ -62,8 +62,7 @@ SceneBase* SceneMain::Update()
 		if (toPlayer.length() < 100)
 		{
 			toPlayer = toPlayer.normalize();
-			DrawLine(m_pPlayer->playerLeft().x, m_pPlayer->playerLeft().y,
-				m_pEnemy->EnemyLeft()[i].x, m_pEnemy->EnemyLeft()[i].y, 0xffff00);// ü‚ğ•`‰æ
+			
 
 			m_deadEnemy[i] = false;
 		}
@@ -81,4 +80,16 @@ void SceneMain::Draw()
 	m_pEnemy->Draw();
 
 	DrawCircle(m_pPlayer->playerLeft().x, m_pPlayer->playerLeft().y, 100, 0xffffff, FALSE);
+	for (int i = 0; i < 100; i++)
+	{
+		Vec2 toPlayer{ 0,0 };
+		toPlayer.x = m_pPlayer->playerLeft().x - m_pEnemy->EnemyLeft()[i].x;
+		toPlayer.y = m_pPlayer->playerLeft().y - m_pEnemy->EnemyLeft()[i].y;
+
+		if (toPlayer.length() < 100)
+		{
+			DrawLine(m_pPlayer->playerLeft().x, m_pPlayer->playerLeft().y,
+				m_pEnemy->EnemyLeft()[i].x, m_pEnemy->EnemyLeft()[i].y, 0xffff00);// ü‚ğ•`‰æ
+		}
+	}
 }

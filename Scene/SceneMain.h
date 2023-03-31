@@ -21,7 +21,7 @@ public:
 
 		int* ip = NULL;
 
-		ip = (int*)malloc(sizeof(int) * 10);
+		ip = (int*)malloc(sizeof(int) * 100);
 
 		if (ip == NULL) {
 			//printfDx("配列作成失敗\n");
@@ -31,7 +31,7 @@ public:
 	}
 private:
 	Vec2 m_pos;//プレイヤーの位置
-	bool m_deadEnemy[10];
+	bool m_deadEnemy[100];
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
 };

@@ -2,7 +2,7 @@
 #include "Util/Vec2.h"
 namespace
 {
-	constexpr int enemyNum = 10;
+	constexpr int enemyNum = 100;
 }
 class Enemy
 {
@@ -21,7 +21,7 @@ public:
 	{
 		int* ip = NULL;
 
-		ip = (int*)malloc(sizeof(int) * 10);
+		ip = (int*)malloc(sizeof(int) * enemyNum);
 
 		if (ip == NULL) {
 			printfDx("îzóÒçÏê¨é∏îs\n");
@@ -38,7 +38,7 @@ public:
 		
 		int* ip = NULL;
 
-		ip = (int*)malloc(sizeof(int) * 10);
+		ip = (int*)malloc(sizeof(int) * enemyNum);
 
 		if (ip == NULL) {
 			printfDx("îzóÒçÏê¨é∏îs\n");
